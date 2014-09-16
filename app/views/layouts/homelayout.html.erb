@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App5: Home Page</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p>Home Layout</p>
+<%= link_to 'Home', home_path %>
+<%= link_to 'Profile', profile_path %>
+<%= link_to 'Products', products_path %>
+<%= link_to 'Sales', sales_path %>
+
+<%= yield %>
+
+</body>
+</html>
