@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   get '/' => 'home#index', as: :home
-  get '/profile(/:username)' => 'home#profile', as: :profile
-  get '/products(/:id)' => 'products#products', as: :products
-  get '/sales' => 'products#sales', as: :sales
+  get '/profile/:username' => 'home#profile', as: :profile #moved the '/()' outside of the parameter, this could be causeing some issues.
+  get '/products/:id' => 'products#products', as: :products #see note in products_controller - you would use 'inde' for restful routing actions
+  get '/sales' => 'products#sales', as: :sales #there is no controller action for this, and it should really have its own controller 'sales_controller'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get 'products/:id' => 'catalog#view'  # <------- Look to the file comments for examples of routes.
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
